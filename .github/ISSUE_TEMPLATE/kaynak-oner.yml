@@ -1,0 +1,48 @@
+name: Kaynak öner
+description: Arşive yeni bir açık veri kaynağı önerin ya da mevcut bir kaydı düzeltin.
+title: "[Kaynak] "
+labels: ["kaynak-önerisi"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Teşekkürler! Önerdiğiniz kaynak kontrol edildikten sonra `data/kaynaklar.csv` dosyasına eklenecek.
+  - type: dropdown
+    id: islem
+    attributes:
+      label: İşlem
+      options: ["Yeni kaynak", "Mevcut kaydı düzelt", "Bağlantı çalışmıyor"]
+    validations: { required: true }
+  - type: input
+    id: ad
+    attributes: { label: Kaynağın adı, placeholder: "Örn. İzmir Büyükşehir Belediyesi Açık Veri Portalı" }
+    validations: { required: true }
+  - type: input
+    id: url
+    attributes: { label: Bağlantı (URL), placeholder: "https://…" }
+    validations: { required: true }
+  - type: input
+    id: kapsam
+    attributes: { label: Kapsam, placeholder: "Türkiye, İzmir, Küresel, Avrupa…" }
+    validations: { required: true }
+  - type: input
+    id: konu
+    attributes: { label: Konu, placeholder: "Afet ve risk, İklim, Nüfus, Arazi örtüsü, Su…" }
+  - type: dropdown
+    id: veri
+    attributes:
+      label: Veri türü
+      options: ["Vektör", "Raster", "Tablo", "Çoklu", "Bilmiyorum"]
+  - type: dropdown
+    id: indir
+    attributes:
+      label: Veri indirilebiliyor mu?
+      options: ["Evet", "Dolaylı", "Hayır", "Bilmiyorum"]
+  - type: dropdown
+    id: giris
+    attributes:
+      label: Üyelik / giriş gerekiyor mu?
+      options: ["Hayır", "Evet", "Bilmiyorum"]
+  - type: textarea
+    id: aciklama
+    attributes: { label: Kısa açıklama, description: "1–2 cümle: ne tür veriler sunuyor?" }
